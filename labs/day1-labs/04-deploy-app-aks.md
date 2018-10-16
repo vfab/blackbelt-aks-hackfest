@@ -29,7 +29,7 @@
     * Review the yaml file and learn about some of the settings. Note the environment variables that allow the services to connect
     * Update the yaml file for the proper container image names.
     * You will need to replace the `<login server>` with the ACR login server created in lab 2
-        > Note: You will update the image name TWICE updating the web and api container images.
+        > NOTE: You will update the image name _TWICE_ updating the web and api container images.
 
     * Example: 
 
