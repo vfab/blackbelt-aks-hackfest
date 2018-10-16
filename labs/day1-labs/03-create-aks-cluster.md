@@ -2,20 +2,9 @@
 
 ## Create AKS cluster
 
-1. Login to Azure Portal at http://portal.azure.com. Your Azure login ID will look something like `odl_u9294@csgtraining.onmicrosoft.com`
-1. Open the Azure Cloud Shell
-
-    ![Azure Cloud Shell](img/cloudshell.png "Azure Cloud Shell")
-    >NOTE: You can safely do this lab in Cloud Shell, but you can laso do it in the jumpbox VM if you'd like.
-
-1. Cloud Shell was already configured in Lab 0.  If you skipped that step, then please review Lab 0 and setup Cloud Shell.
-
-1. Once your cloud shell is started, clone the workshop repo into the cloud shell environment
-    ```
-    git clone https://github.com/Azure/blackbelt-aks-hackfest.git
-    ```
-
-1. In the cloud shell, you are automatically logged into your Azure subscription. ```az login``` is not required.
+1. In your jumpbox terminal, if you have not yet logged into your Azure subscription, run  
+```az login -u <user ID> -p "<password>"```.  
+E.g. ```az login -u odl-u12345 -p "AbC1234"```
     
 1. Verify your subscription is correctly selected as the default
     ```
