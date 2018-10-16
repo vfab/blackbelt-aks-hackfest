@@ -59,12 +59,13 @@ Prometheus is a Cloud Native Computing Foundation (CNCF) project used to collect
     ```
 
     ```
-    kubectl get svc | grep prometheus
+    kubectl get svc
     # You should see something like the following as output:
     gbbhackprometheus-prometheus-kube-state-metrics   ClusterIP      None           <none>          80/TCP           3m
     gbbhackprometheus-prometheus-node-exporter        ClusterIP      None           <none>          9100/TCP         3m
     gbbhackprometheus-prometheus-server               LoadBalancer   10.0.212.145   52.168.100.25   9090:32340/TCP   3m
     ```
+    >NOTE: Make note of the public/external IP for gbbhackprometheus-prometheus-server.  You'll need it below.
 
 ## Install Grafana
 Grafana is a dashboard visualization tool that can use all kinds of data sources. In our case, Prometheus will be used as the data source.
@@ -86,7 +87,7 @@ Grafana is a dashboard visualization tool that can use all kinds of data sources
     ```
 
     ```
-    kubectl get svc | grep grafana
+    kubectl get svc
     # You should see something like the following as output, take note of the **EXTERNAL-IP column**:
     khgrafana-grafana                            LoadBalancer   10.0.163.226   "52.226.75.38"     80:31476/TCP   2h
     ```
@@ -100,13 +101,15 @@ Use the EXTERNAL-IP value from the previous step and put that into your browser:
 ## Setting up Grafana
 1. Log into Grafana Dashboard using **admin** for the username and password
     * You should see something like the following:
+    > NOTE: The Grafana UI has changed, and the images below may be out of date.
 
     ![](img/8-grafana_loggedin.png)
 
 2. Add Prometheus as a Data Source
     * If you recall from above, we exposed a number of K8s services, one of those services was the Prometheus Server. We are going to use that Service endpoint in our Data Service configuration. The Add Data Source screen should look something like the below screen shot.
 
-    > Use `http://gbbhackprometheus-prometheus-server:9090` for the URL in the HTTP settings.
+    > Use `<PROMETHEUS-EXTERNAL-IP>:9090` for the URL in the HTTP settings, where EXTERNAL-IP is the external IP from your gbbhackprometheus-prometheus-server service that you noted above.
+    > Select "Server (default)" for the "Access" option.
 
     ![](img/8-grafana_datasource.png)
 

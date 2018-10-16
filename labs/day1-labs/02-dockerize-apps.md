@@ -3,6 +3,7 @@
 ## Build Container Images
 
 For the first container, we will be creating a Dockerfile from scratch. For the other containers, the Dockerfiles are provided.
+>NOTE: Cloud Shell often causes problems with this lab.  Use Cloud Shell at your own risk.
 
 ### Web Container
 
@@ -10,7 +11,7 @@ For the first container, we will be creating a Dockerfile from scratch. For the 
 
     * Access the jumpbox
     * In the `~/blackbelt-aks-hackfest/app/web` directory, add a file called "Dockerfile"
-        * If you are in an SSH session, use `vi` as the editor
+        * If you are in an SSH session, use `nano` as the editor
         * In RDP or in Azure Cloud Shell, you can use `code .` (use Visual Studio Code)
 
     * Add the following lines and save:
@@ -182,6 +183,7 @@ Now that we have container images for our application components, we need to sto
 
     docker login --username $ACR_USER --password $ACR_PWD $ACR_SERVER
     ```
+    >NOTE: Copy and paste the ACR values above into Notepad or a similar app.  You will need them later on.
 
 ### Tag images with ACR server and repository 
 

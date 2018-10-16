@@ -2,25 +2,26 @@
 
 ## Work Environment
 
-There are two environments you will be working in for the exercises today.
+There are two environments you can use for the exercises today.
 
-1. **Jumpbox:** The apps and containers must be run on a Linux machine. A CentOS linux machine has been created for you in your Azure subscription.
+1. **Jumpbox:** The apps and containers must be run on a Linux machine. An Ubuntu linux machine has been created for you in your Azure subscription.
 
-    > Note: If you have bash or ssh available on your machine, it is easiest to access the jump box via SSH. Otherwise, RDP is required.
+    > NOTE: The jumpbox is the most reliable option for completing the labs.  If you have bash or ssh available on your machine, it is easiest to access the jump box via SSH. Otherwise, RDP is required.
 
 2. **Azure Cloud Shell:** The Azure Cloud Shell will be accessed by logging into the Azure Portal (http://portal.azure.com).
 
-Labs 1 and 2 require the Jumpbox. The subsequent labs all use the Azure Cloud Shell.
+Labs 1 and 2 require the Jumpbox and work best with RDP. The subsequent can be done in Azure Cloud Shell, but be warned -- there are known issues with the docker daemon stopping, which will block your progress.
 
 ## Clone Lab Github Repo
 
 Once you have accessed the jumpbox, you must clone the workshop repo to the machine.
 
 1. Start with a terminal on the jumpbox
-2. Clone the Github repo via the command line
+2. The GitHub repo has already been cloned to your local folder, but pull the latest changes
 
     ```
-    git clone https://github.com/Azure/blackbelt-aks-hackfest.git
+    cd blackbelt-aks-hackfest
+    git pull
     ```
 
 ## Get Applications up and running
@@ -48,6 +49,7 @@ The API for the app is written in javascript, running on [Node.js](https://nodej
 
     npm install && npm run localmachine
     ```
+    >NOTE: if you are SSH'd into the jumpbox this step may fail.  That's OK.
 
 2. Open a new terminal session on the jumpbox and test the API
 
@@ -69,6 +71,7 @@ The web frontend for the app is written in [Vue.js](https://vuejs.org/Vue "Vue.j
 
     npm install && npm run localmachine
     ```
+    >NOTE: if you are SSH'd into the jumpbox this step may fail.  That's OK.
 3. Test the web front-end
 
     The jumpbox has an external DNS name and port 8080 is open. You can browse your running app with a link such as: http://jump-vm-csc4f653357f-q72zm5c4ggcza.eastus.cloudapp.azure.com:8080 

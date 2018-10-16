@@ -2,12 +2,13 @@
 
 ## Create AKS cluster
 
-1. Login to Azure Portal at http://portal.azure.com. Your Azure login ID will look something like `odl_user_9294@gbbossteamoutlook.onmicrosoft.com`
+1. Login to Azure Portal at http://portal.azure.com. Your Azure login ID will look something like `odl_u9294@csgtraining.onmicrosoft.com`
 2. Open the Azure Cloud Shell
 
     ![Azure Cloud Shell](img/cloudshell.png "Azure Cloud Shell")
+    >NOTE: You can safely do this lab in Cloud Shell, but you can laso do it in the jumpbox VM if you'd like.
 
-3. The first time Cloud Shell is started will require you to create a storage account. In our lab, you must click `Advanced` and enter an account name and share.
+3. Cloud Shell was already configured in Lab 0.  If you skipped that step, then please review Lab 0 and setup Cloud Shell.
 
 4. Once your cloud shell is started, clone the workshop repo into the cloud shell environment
     ```
@@ -50,6 +51,12 @@
     
     NAME=
 
+    # confirm the NAME variable is set correctly
+
+    echo $NAME
+
+    > ODL-aks-v2-gbb-8386
+
     # We need to use a different cluster name, as sometimes the name in the group list has an underscore, and only dashes are permitted
     
     CLUSTER_NAME="${NAME//_}"
@@ -63,8 +70,9 @@
     # set the location to one of the provided AKS locations (eg - centralus, eastus)
     LOCATION=
 
-    az aks create -n $CLUSTER_NAME -g $NAME -c 2 -k 1.11.2 --generate-ssh-keys -l $LOCATION
+    az aks create -n $CLUSTER_NAME -g $NAME -c 2 -k 1.11.2 --generate-ssh-keys -l $LOCATION --disable-rbac
     ```
+    >NOTE: The "--disable-rbac" option is specified to simplify upcoming labs.  It is not recommended in a production environment.
 
 9. Verify your cluster status. The `ProvisioningState` should be `Succeeded`
     ```

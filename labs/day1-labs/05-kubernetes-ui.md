@@ -2,7 +2,7 @@
 
 The Kubernetes dashboard is a web ui that lets you view, monitor, and troubleshoot Kubernetes resources. 
 
-> Note: The Kubernetes dashboard is a secured endpoint and can only be accessed using the SSH keys for the cluster. Since cloud shell runs in the browser, it is not possible to tunnel to the dashboard using the steps below.
+> Note: The Kubernetes dashboard is a secured endpoint and can only be accessed using the SSH keys for the cluster. You can only complete this lab if you can RDP into your jumpbox.  If not, simply skip this lab.
 
 ### Accessing The Dashboard UI
 
