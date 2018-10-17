@@ -3,7 +3,7 @@
 ## Build Container Images
 
 For the first container, we will be creating a Dockerfile from scratch. For the other containers, the Dockerfiles are provided.
->NOTE: Cloud Shell often causes problems with this lab.  Use Cloud Shell at your own risk.
+>NOTE: Cloud Shell often causes problems with this lab.  __Use Cloud Shell at your own risk__!
 
 ### Web Container
 

@@ -2,7 +2,7 @@
 
 ## Review/Edit the YAML Config Files
 
-1. In Azure Cloud Shell edit `heroes-db.yaml` using Visual Studio Code:
+1. In your jump box terminal edit `heroes-db.yaml` using Visual Studio Code:
     ```
     cd ~/blackbelt-aks-hackfest/labs/helper-files
 
@@ -20,7 +20,7 @@
             name:  heroes-db-cntnr
         ```
 
-2. In Azure Cloud Shell edit `heroes-web-api.yaml` using Visual Studio Code:
+2. In Azure your jump box terminal edit `heroes-web-api.yaml` using Visual Studio Code:
     ```
     cd ~/blackbelt-aks-hackfest/labs/helper-files
 

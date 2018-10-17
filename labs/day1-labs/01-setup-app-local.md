@@ -14,7 +14,7 @@ Labs 1 and 2 require the Jumpbox and work best with RDP. The subsequent can be d
 
 ## Clone Lab Github Repo
 
-Once you have accessed the jumpbox, you must clone the workshop repo to the machine.
+Once you have accessed the jumpbox, you must update the workshop repo.
 
 1. Start with a terminal on the jumpbox
 2. The GitHub repo has already been cloned to your local folder, but pull the latest changes

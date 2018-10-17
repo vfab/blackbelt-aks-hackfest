@@ -14,7 +14,7 @@ For the purposes of this lab we will be focusing in on Prometheus and using Graf
 
 We are going to be installing Prometheus and Grafana into our K8s cluster using Helm and Tiller. You can think of Helm as a package manager for Kubernetes with Tiller being the server-side component.
 
-1. In the Azure Cloud Shell, the Helm CLI is already installed
+1. In your jump box VM the Helm CLI is already installed
 
 2. If your AKS cluster has RBAC enabled (which is the case by default with Kuberentes version 1.10+), you need first to [create a Service Account for Tiller](https://docs.microsoft.com/en-us/azure/aks/kubernetes-helm#create-a-service-account) by running:
     ```
