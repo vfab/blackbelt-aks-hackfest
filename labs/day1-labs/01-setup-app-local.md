@@ -6,11 +6,10 @@ There are two environments you can use for the exercises today.
 
 1. **Jumpbox:** The apps and containers must be run on a Linux machine. An Ubuntu linux machine has been created for you in your Azure subscription.
 
-    > NOTE: The jumpbox is the most reliable option for completing the labs.  If you have bash or ssh available on your machine, it is easiest to access the jump box via SSH. Otherwise, RDP is required.
-
 2. **Azure Cloud Shell:** The Azure Cloud Shell will be accessed by logging into the Azure Portal (http://portal.azure.com).
 
-Labs 1 and 2 require the Jumpbox and work best with RDP. The subsequent can be done in Azure Cloud Shell, but be warned -- there are known issues with the docker daemon stopping, which will block your progress.
+> NOTE: The jumpbox is the most reliable option for completing the labs.  Remoting into the jumpbox via RDP will work for all labs. If you cannot RDP to the jumpbox, then SSH is the next best option, _however some steps that require a GUI will not work._  
+_As a fallback_ you can also use Azure Cloud Shell, but be warned -- there are known issues in Cloud Shell with the docker daemon stopping, which will block your progress.
 
 ## Clone Lab Github Repo
 
@@ -20,7 +19,7 @@ Once you have accessed the jumpbox, you must update the workshop repo.
 2. The GitHub repo has already been cloned to your local folder, but pull the latest changes
 
     ```
-    cd blackbelt-aks-hackfest
+    cd ~/blackbelt-aks-hackfest
     git pull
     ```
 

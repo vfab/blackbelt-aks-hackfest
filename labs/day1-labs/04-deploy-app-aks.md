@@ -10,7 +10,7 @@
     ```
     * Review the yaml file and learn about some of the settings
     * Update the yaml file for the proper container image name
-    * You will need to replace the `<login server>` with the ACR login server created in lab 2
+    * You will need to replace the `<login server>` with the ACR login server created in lab 2. There is only one instance of `<login server>` to replace.
     * Example: 
 
         ```
@@ -20,7 +20,7 @@
             name:  heroes-db-cntnr
         ```
 
-2. In Azure your jump box terminal edit `heroes-web-api.yaml` using Visual Studio Code:
+2. In Azure your jumpbox terminal edit `heroes-web-api.yaml` using Visual Studio Code:
     ```
     cd ~/blackbelt-aks-hackfest/labs/helper-files
 

@@ -95,9 +95,9 @@ docker network create my-network
     docker run -d --name db --net my-network -p 27017:27017 rating-db
     ```
 
-2. Validate by running `docker ps -a`
+1. Validate by running `docker ps -a`
 
-3. Import data into database
+1. Import data into database
 
     ```
     docker exec -it db bash
@@ -115,7 +115,7 @@ docker network create my-network
     2018-01-10T19:26:07.761+0000	imported 2 documents
     ```
 
-4. Type `exit` to exit out of container
+1. Type `exit` to exit out of container
 
 ### API Container
 
@@ -127,9 +127,9 @@ docker network create my-network
 
     > Note that environment variables are used here to direct the api app to mongo.
 
-2. Validate by running `docker ps -a`
+1. Validate by running `docker ps -a`
 
-3. Test api app with curl
+1. Test api app with curl
     ```
     curl http://localhost:3000/api/heroes
     ```
@@ -142,9 +142,9 @@ docker network create my-network
     docker run -d --name web -e "API=http://api:3000/" --net my-network -p 8080:8080 rating-web
     ```
 
-2. Validate by running `docker ps -a`
+1. Validate by running `docker ps -a`
 
-3. Test web app
+1. Test web app
     
     The jumpbox has a Public IP address and port 8080 is open. You can browse your running app with a link such as: http://13.90.246.114:8080 
 
@@ -160,20 +160,20 @@ Now that we have container images for our application components, we need to sto
 ### Create Azure Container Registry instance
 
 1. In the browser, sign in to the Azure portal at https://portal.azure.com. Your Azure login ID will look something like `odl_user_9294@gbbossteamoutlook.onmicrosoft.com`
-2. Click "Create a resource" and select "Container Registry"
-3. Provide a name for your registry (this must be unique)
-4. Use the existing Resource Group
-5. Enable the Admin user
-6. Use the 'Standard' SKU (default)
+1. Click "Create a resource" and select "Container Registry"
+1. Provide a name for your registry (this must be unique)
+1. Use the existing Resource Group
+1. Enable the Admin user
+1. Use the 'Standard' SKU (default)
 
     > The Standard registry offers the same capabilities as Basic, but with increased storage limits and image throughput. Standard registries should satisfy the needs of most production scenarios.
 
 ### Login to your ACR with Docker
 
 1. Browse to your Container Registry in the Azure Portal
-2. Click on "Access keys"
-3. Make note of the "Login server", "Username", and "password"
-4. In the terminal session on the jumpbox, set each value to a variable as shown below
+1. Click on "Access keys"
+1. Make note of the "Login server", "Username", and "password"
+1. In the terminal session on the jumpbox, set each value to a variable as shown below
 
     ```
     # set these values to yours
@@ -226,4 +226,4 @@ v1: digest: sha256:f84eba148dfe244f8f8ad0d4ea57ebf82b6ff41f27a903cbb7e3fbe377bb2
 ### Validate images in Azure
 
 1. Return to the Azure Portal in your browser and validate that the images appear in your Container Registry under the "Repositories" area.
-2. Under tags, you will see "v1" listed.
+1. Under tags, you will see "v1" listed.
